@@ -1,0 +1,12 @@
+@set('type', type ?? 'text')
+@set('name', name ?? label?.toLowerCase())
+
+<label class="flex flex-col">
+  <span class="font-bold mb-2">{{ label }}</span>
+  <input 
+    type="{{ type }}" 
+    name="{{ name }}" 
+    class="px-3 py-2 border border-gray-600 bg-white rounded-lg" 
+    {{{ required && 'required' }}}
+  />
+</label>

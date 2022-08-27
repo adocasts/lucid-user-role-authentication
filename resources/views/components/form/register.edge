@@ -1,0 +1,10 @@
+@form.section({ title: title ?? 'Register' })
+  <form action="{{ action }}" method="POST" class="flex flex-col space-y-6">
+    @!form.field({ label: 'Email', type: 'email', required: true })
+    @!form.field({ label: 'Password', type: 'password', required: true })
+
+    @button({ type: 'submit' })
+      Register
+    @end
+  </form>
+@end
