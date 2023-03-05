@@ -3,7 +3,13 @@
 @section('content')
 
   <main class="flex flex-wrap justify-center mt-24">
-    @!form.login({ title: 'Admin Login' })
+    @if (flashMessages.has('error'))
+      <div class="text-red">
+        {{ flashMessages.get('error') }}
+      </div>
+    @endif
+
+    @!form.login({ title: 'Admin Login', action: route('auth.admin.login') })
 
     <div class="w-full text-center mt-8">
       <a href="{{ route('auth.user.index') }}" class="text-blue-600">

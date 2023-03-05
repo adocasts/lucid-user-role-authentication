@@ -3,9 +3,9 @@
 @section('content')
 
   <main class="flex flex-wrap justify-center items-center h-full">
-    @if (false)
+    @if (auth.user)
       {{--  Logged In  --}}
-      <a href="">
+      <a href="{{ route('auth.user.logout') }}">
         Logout
       </a>
     @else
